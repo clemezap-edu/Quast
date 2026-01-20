@@ -1,1 +1,3 @@
-#Quast - Review the quality of your code fast
+# Quast
+
+Review the quality of your code fast
