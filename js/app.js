@@ -122,4 +122,78 @@ const preguntas = [
 const quizProgress = document.getElementById('quizProgress');
 const questionContainer = document.getElementById('questionContainer');
 const answerContainer = document.getElementById('answerContainer');
+let currentQuestionIndex = 0;
 
+
+/*
+    * Funcion para manejar las preguntas
+*/
+
+function handleQuestion(index){
+
+    /* 
+        * Muestra la barra de progreso dependiendo de las preguntas que están definidas.    
+    */
+
+    quizProgress.innerHTML = "";
+    preguntas.forEach((pregunta) =>{
+        quizProgress.innerHTML += "<span></span>";
+    });
+
+
+    /*
+        * Muestra el progreso en la barra de progreso
+    */
+
+    let spans = document.querySelectorAll('span');
+    for (let i = 0; i <= index; i++ ){
+        spans[i].classList.add('seen');
+    }
+
+
+    /*
+        * Muestra la información de la pregunta actual
+    */ 
+
+    questionContainer.innerHTML =
+        `<p>${preguntas[index]  .tema}</p> 
+        <p>${preguntas[index].pregunta}</p>
+        `;
+
+    /*
+        * Muestra las posibles respuestas 
+    */
+    answerContainer.innerHTML = "";
+    preguntas[index].posiblesRespuesta.forEach((respuesta) => {
+        answerContainer.innerHTML += `<button>${respuesta}</button>`;
+    });
+
+    /*
+       *  Maneja las respuestas seleccionadas
+    */
+    let answers = document.querySelectorAll("button");
+    answers.forEach((answer) => {
+        answer.addEventListener("click", (e) => {
+        
+            if (e.target.textContent === preguntas[index].respuestaCorrecta){
+                console.log("Correcto!");
+            } else {
+                console.log("Incorrecto!");
+            }
+
+            if (currentQuestionIndex === questionContainer.lenght -1) {
+                currentQuestionIndex = 0;
+            } else {
+                currentQuestionIndex ++;
+            }
+            handleQuestion(currentQuestionIndex);
+
+        });
+
+    });
+
+
+
+}
+
+handleQuestion(currentQuestionIndex);
