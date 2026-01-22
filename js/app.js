@@ -5,113 +5,103 @@
 const preguntas = [
     {
         tema: 'Mantenibilidad',
-        pregunta: '¿Cuál es el propósito principal de medir la Complejidad Ciclomática de McCabe en un módulo de software?',
+        pregunta: '¿En qué medida tu código sigue los principios SOLID y estándares de "Clean Code" (nombres descriptivos, funciones pequeñas, sin efectos secundarios)?',
         posiblesRespuesta: [
-            "Determinar el número de rutas linealmente independientes a través del código fuente.",
-            "Calcular el tiempo total de ejecución del algoritmo en el peor de los casos.",
-            "Medir la cantidad de memoria volátil consumida por el stack de ejecución.",
-            "Evaluar la compatibilidad del sistema con diferentes sistemas operativos."
-        ],
-        respuestaCorrecta: 'Determinar el número de rutas linealmente independientes a través del código fuente.'
+            "No se aplican estándares de limpieza (Código espagueti).",
+            "Se aplican de forma inconsistente en algunos módulos.",
+            "La mayor parte del código sigue buenas prácticas de legibilidad.",
+            "Cumplimiento total: código autodocumentado y altamente modular."
+        ]
+    },
+    {
+        tema: 'Usabilidad / Accesibilidad',
+        pregunta: '¿Qué nivel de implementación de accesibilidad (etiquetado ARIA, contraste, navegación por teclado) posee la interfaz de usuario?',
+        posiblesRespuesta: [
+            "Nulo: no se consideró la accesibilidad en el diseño.",
+            "Básico: solo cumple con etiquetas HTML semánticas elementales.",
+            "Intermedio: cumple con la mayoría de las pautas de contraste y navegación.",
+            "Avanzado: cumple con estándares WCAG y es compatible con lectores de pantalla."
+        ]
+    },
+    {
+        tema: 'Fiabilidad y Pruebas',
+        pregunta: '¿Cuál es el porcentaje de cobertura de pruebas (Unit Testing / Integration Testing) de las funciones críticas del sistema?',
+        posiblesRespuesta: [
+            "0%: No se realizan pruebas automatizadas.",
+            "Menos del 50%: Solo se prueban los flujos principales.",
+            "Entre 50% y 80%: La mayoría de los módulos están cubiertos.",
+            "Más del 90%: Cobertura casi total con pruebas de regresión."
+        ]
     },
     {
         tema: 'Eficiencia de Desempeño',
-        pregunta: 'En el contexto de pruebas de carga, ¿qué indica un aumento exponencial en el tiempo de respuesta ante un incremento lineal de usuarios concurrentes?',
+        pregunta: '¿Cómo calificarías la gestión de recursos (memoria, CPU, conexiones a DB) y la complejidad algorítmica de tu software?',
         posiblesRespuesta: [
-            "Que el sistema tiene una escalabilidad elástica óptima.",
-            "La presencia de un cuello de botella (bottleneck) en los recursos del sistema.",
-            "Que el ancho de banda de la red es superior a la capacidad del servidor.",
-            "Un manejo eficiente de la concurrencia mediante hilos no bloqueantes."
-        ],
-        respuestaCorrecta: 'La presencia de un cuello de botella (bottleneck) en los recursos del sistema.'
-    },
-    {
-        tema: 'Fiabilidad',
-        pregunta: '¿Qué métrica se utiliza para medir el tiempo promedio que transcurre entre dos fallos consecutivos del sistema?',
-        posiblesRespuesta: [
-            "MTTR (Mean Time To Repair)",
-            "TTR (Total Time to Recover)",
-            "MTBF (Mean Time Between Failures)",
-            "SLA (Service Level Agreement)"
-        ],
-        respuestaCorrecta: 'MTBF (Mean Time Between Failures)'
+            "Deficiente: Presenta fugas de memoria o bloqueos frecuentes.",
+            "Aceptable: El rendimiento es estable pero no está optimizado.",
+            "Óptimo: Se utilizan estructuras de datos eficientes y manejo de caché.",
+            "Excelente: Optimización máxima con perfiles de rendimiento y baja latencia."
+        ]
     },
     {
         tema: 'Seguridad',
-        pregunta: '¿Qué principio de diseño asegura que el software solo otorgue los permisos mínimos necesarios para realizar una operación?',
+        pregunta: '¿En qué grado el software implementa mecanismos de saneamiento de entradas y protección contra vulnerabilidades comunes (OWASP Top 10)?',
         posiblesRespuesta: [
-            "Principio de Menor Privilegio (POLP)",
-            "Seguridad por Oscuridad",
-            "Defensa en Profundidad",
-            "Aislamiento de Procesos"
-        ],
-        respuestaCorrecta: 'Principio de Menor Privilegio (POLP)'
+            "Ninguno: No hay validación de entradas ni protección de datos.",
+            "Básico: Solo validaciones simples en el lado del cliente.",
+            "Sólido: Implementa sentencias preparadas, hashing de contraseñas y JWT.",
+            "Integral: Auditorías de seguridad constantes y cifrado en todas las capas."
+        ]
     },
     {
-        tema: 'Portabilidad',
-        pregunta: '¿Qué técnica permite ejecutar aplicaciones en entornos aislados asegurando que el software se comporte igual en desarrollo y producción?',
+        tema: 'Mantenibilidad',
+        pregunta: '¿En qué medida tu código sigue los principios SOLID y estándares de "Clean Code" (nombres descriptivos, funciones pequeñas, sin efectos secundarios)?',
         posiblesRespuesta: [
-            "Virtualización de Hardware",
-            "Contenerización (ej. Docker)",
-            "Compilación Just-In-Time (JIT)",
-            "Transpilación de código fuente"
-        ],
-        respuestaCorrecta: 'Contenerización (ej. Docker)'
+            "No se aplican estándares de limpieza (Código espagueti).",
+            "Se aplican de forma inconsistente en algunos módulos.",
+            "La mayor parte del código sigue buenas prácticas de legibilidad.",
+            "Cumplimiento total: código autodocumentado y altamente modular."
+        ]
     },
     {
-        tema: 'Usabilidad',
-        pregunta: 'Según la heurística de Nielsen, ¿qué aspecto se evalúa cuando el sistema informa al usuario sobre lo que está ocurriendo mediante retroalimentación oportuna?',
+        tema: 'Usabilidad / Accesibilidad',
+        pregunta: '¿Qué nivel de implementación de accesibilidad (etiquetado ARIA, contraste, navegación por teclado) posee la interfaz de usuario?',
         posiblesRespuesta: [
-            "Consistencia y estándares",
-            "Visibilidad del estado del sistema",
-            "Prevención de errores",
-            "Flexibilidad de uso"
-        ],
-        respuestaCorrecta: 'Visibilidad del estado del sistema'
+            "Nulo: no se consideró la accesibilidad en el diseño.",
+            "Básico: solo cumple con etiquetas HTML semánticas elementales.",
+            "Intermedio: cumple con la mayoría de las pautas de contraste y navegación.",
+            "Avanzado: cumple con estándares WCAG y es compatible con lectores de pantalla."
+        ]
     },
     {
-        tema: 'Pruebas de Software',
-        pregunta: '¿Cuál es la diferencia fundamental entre las pruebas de "Caja Negra" y "Caja Blanca"?',
+        tema: 'Fiabilidad y Pruebas',
+        pregunta: '¿Cuál es el porcentaje de cobertura de pruebas (Unit Testing / Integration Testing) de las funciones críticas del sistema?',
         posiblesRespuesta: [
-            "La caja negra analiza la lógica interna; la blanca solo la interfaz.",
-            "La caja blanca requiere conocimiento de la estructura interna del código; la negra se basa en requisitos funcionales.",
-            "Las de caja negra son realizadas por desarrolladores; las de blanca por usuarios finales.",
-            "La caja blanca solo mide el rendimiento; la negra solo la funcionalidad."
-        ],
-        respuestaCorrecta: 'La caja blanca requiere conocimiento de la estructura interna del código; la negra se basa en requisitos funcionales.'
+            "0%: No se realizan pruebas automatizadas.",
+            "Menos del 50%: Solo se prueban los flujos principales.",
+            "Entre 50% y 80%: La mayoría de los módulos están cubiertos.",
+            "Más del 90%: Cobertura casi total con pruebas de regresión."
+        ]
     },
     {
-        tema: 'Calidad de Código',
-        pregunta: '¿A qué se refiere el término "Deuda Técnica" en el ciclo de vida de desarrollo?',
+        tema: 'Eficiencia de Desempeño',
+        pregunta: '¿Cómo calificarías la gestión de recursos (memoria, CPU, conexiones a DB) y la complejidad algorítmica de tu software?',
         posiblesRespuesta: [
-            "Al costo financiero de las licencias de software utilizadas.",
-            "Al costo futuro de retrabajo causado por elegir una solución fácil ahora en lugar de una mejor solución a largo plazo.",
-            "Al tiempo que tarda el equipo de QA en reportar un bug de alta prioridad.",
-            "A la depreciación del hardware donde se aloja el sistema."
-        ],
-        respuestaCorrecta: 'Al costo futuro de retrabajo causado por elegir una solución fácil ahora en lugar de una mejor solución a largo plazo.'
+            "Deficiente: Presenta fugas de memoria o bloqueos frecuentes.",
+            "Aceptable: El rendimiento es estable pero no está optimizado.",
+            "Óptimo: Se utilizan estructuras de datos eficientes y manejo de caché.",
+            "Excelente: Optimización máxima con perfiles de rendimiento y baja latencia."
+        ]
     },
     {
-        tema: 'Integridad de Datos',
-        pregunta: '¿Qué propiedad de las transacciones (ACID) garantiza que una operación se complete en su totalidad o no se realice en absoluto?',
+        tema: 'Seguridad',
+        pregunta: '¿En qué grado el software implementa mecanismos de saneamiento de entradas y protección contra vulnerabilidades comunes (OWASP Top 10)?',
         posiblesRespuesta: [
-            "Consistencia",
-            "Aislamiento (Isolation)",
-            "Atomicidad",
-            "Durabilidad"
-        ],
-        respuestaCorrecta: 'Atomicidad'
-    },
-    {
-        tema: 'Escalabilidad',
-        pregunta: '¿Qué es la Escalabilidad Horizontal en una infraestructura de software?',
-        posiblesRespuesta: [
-            "Añadir más recursos (CPU, RAM) a un servidor existente.",
-            "Reducir el consumo energético de los nodos de procesamiento.",
-            "Añadir más nodos o máquinas a un clúster para distribuir la carga.",
-            "Optimizar el código para que use menos ciclos de CPU."
-        ],
-        respuestaCorrecta: 'Añadir más nodos o máquinas a un clúster para distribuir la carga.'
+            "Ninguno: No hay validación de entradas ni protección de datos.",
+            "Básico: Solo validaciones simples en el lado del cliente.",
+            "Sólido: Implementa sentencias preparadas, hashing de contraseñas y JWT.",
+            "Integral: Auditorías de seguridad constantes y cifrado en todas las capas."
+        ]
     }
 ];
 
@@ -124,6 +114,17 @@ const questionContainer = document.getElementById('questionContainer');
 const answerContainer = document.getElementById('answerContainer');
 let currentQuestionIndex = 0;
 
+/*
+    * Variables para el sistema de puntuación
+*/
+let totalScore = 0; // Puntuación acumulada
+const maxScorePerQuestion = 100; // Valor máximo por pregunta
+
+/*
+    * Valores para cada opción de respuesta (0%, 25%, 50%, 100%)
+*/
+const answerValues = [0, 25, 50, 100];
+
 
 /*
     * Funcion para manejar las preguntas
@@ -134,6 +135,8 @@ function handleQuestion(index){
     /* 
         * Muestra la barra de progreso dependiendo de las preguntas que están definidas.    
     */
+
+    
 
     quizProgress.innerHTML = "";
     preguntas.forEach((pregunta) =>{
@@ -156,7 +159,7 @@ function handleQuestion(index){
     */ 
 
     questionContainer.innerHTML =
-        `<p>${preguntas[index]  .tema}</p> 
+        `<p>${preguntas[index].tema}</p> 
         <p>${preguntas[index].pregunta}</p>
         `;
 
@@ -164,8 +167,9 @@ function handleQuestion(index){
         * Muestra las posibles respuestas 
     */
     answerContainer.innerHTML = "";
-    preguntas[index].posiblesRespuesta.forEach((respuesta) => {
-        answerContainer.innerHTML += `<button>${respuesta}</button>`;
+    preguntas[index].posiblesRespuesta.forEach((respuesta, respuestaIndex) => {
+        const valorPorcentaje = answerValues[respuestaIndex];
+        answerContainer.innerHTML += `<button data-value="${valorPorcentaje}">${respuesta}</button>`;
     });
 
     /*
@@ -175,25 +179,69 @@ function handleQuestion(index){
     answers.forEach((answer) => {
         answer.addEventListener("click", (e) => {
         
-            if (e.target.textContent === preguntas[index].respuestaCorrecta){
-                console.log("Correcto!");
-            } else {
-                console.log("Incorrecto!");
-            }
+            // Obtener el valor de la respuesta seleccionada
+            const selectedValue = parseInt(e.target.getAttribute('data-value'));
+            totalScore += selectedValue;
+            
+            console.log(`Respuesta seleccionada: ${selectedValue}%`);
+            console.log(`Puntuación acumulada: ${totalScore}`);
 
-            if (currentQuestionIndex === questionContainer.lenght -1) {
-                currentQuestionIndex = 0;
+            // Verificar si es la última pregunta
+            if (currentQuestionIndex === preguntas.length - 1) {
+                // Mostrar pantalla final
+                showFinalScreen();
             } else {
-                currentQuestionIndex ++;
+                currentQuestionIndex++;
+                handleQuestion(currentQuestionIndex);
             }
-            handleQuestion(currentQuestionIndex);
 
         });
 
     });
 
+}
 
+/*
+    * Función para mostrar la pantalla final con el porcentaje acumulado
+*/
+function showFinalScreen() {
+    // Calcular el porcentaje final
+    const maxPossibleScore = preguntas.length * maxScorePerQuestion;
+    const finalPercentage = ((totalScore / maxPossibleScore) * 100).toFixed(2);
+    
+    // Limpiar la barra de progreso
+    quizProgress.innerHTML = "";
 
+    quizProgress.classList.add("visibility");
+
+    // Mostrar pantalla de resultados
+    questionContainer.innerHTML = `
+        <div class="final-screen">
+            <h1>¡Quiz Completado!</h1>
+            <p class="final-message">Has terminado todas las preguntas</p>
+        </div>
+    `;
+    
+    answerContainer.innerHTML = `
+        <div class="results-container">
+            <h2>Tu Puntuación Final</h2>
+            <div class="score-display">
+                <span class="percentage">${finalPercentage}%</span>
+            </div>
+            <p class="score-details">Puntos obtenidos: ${totalScore} de ${maxPossibleScore}</p>
+            <button class="restart-btn" onclick="restartQuiz()">Reiniciar Quiz</button>
+        </div>
+    `;
+}
+
+/*
+    * Función para reiniciar el quiz
+*/
+function restartQuiz() {
+    currentQuestionIndex = 0;
+    totalScore = 0;
+    quizProgress.classList.remove("visibility");
+    handleQuestion(currentQuestionIndex);
 }
 
 handleQuestion(currentQuestionIndex);
