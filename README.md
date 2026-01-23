@@ -73,6 +73,9 @@ quast/
 
 - Clemente Ramón Zapata Lerma
 - Ricardo Maximiliano Trejo Tobías
+- Ulises Gael Zamarripa Villanueva
+- Zavala Castro German David
+- Yaretzi Nicol Rubio Marquez
 
 ---
 
